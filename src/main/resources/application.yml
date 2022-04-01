@@ -1,7 +1,7 @@
 jwt:
   secret: '2DD38FB915C03B157CA57D7A76055534EF5B8F97A4E1BFE90975B07D6ED34392'
-server:
-  port: 8082
+#server:
+ # port: 8082
 
 spring:
   datasource:
