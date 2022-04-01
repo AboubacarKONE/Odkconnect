@@ -18,8 +18,6 @@ import com.odk.connect.repository.QuestionRepository;
 import com.odk.connect.repository.UserRepository;
 import com.odk.connect.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.*;
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import static org.springframework.http.MediaType.IMAGE_GIF_VALUE;
 import static org.springframework.http.MediaType.IMAGE_JPEG_VALUE;
