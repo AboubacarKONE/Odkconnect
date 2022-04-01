@@ -24,7 +24,7 @@ import static com.odk.connect.constants.fileConstant.*;
 
 @SpringBootApplication
 //@EnableJpaAuditing(auditorAwareRef = "auditorAware")
-public class OdkconnectApplication {
+public class OdkconnectApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OdkconnectApplication.class, args);

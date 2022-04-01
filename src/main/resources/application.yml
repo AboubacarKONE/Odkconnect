@@ -1,14 +1,18 @@
 jwt:
   secret: '2DD38FB915C03B157CA57D7A76055534EF5B8F97A4E1BFE90975B07D6ED34392'
-#server:
- # port: 8082
+server:
+  port: 8082
 
 spring:
   datasource:
-    url: jdbc:postgresql://ec2-52-18-116-67.eu-west-1.compute.amazonaws.com:5432/d6n3pmnav1qr38
+    url: jdbc:mysql://localhost:3306/db_odkconnect
+#    url: jdbc:postgresql://ec2-52-18-116-67.eu-west-1.compute.amazonaws.com:5432/d6n3pmnav1qr38
 
-    password: 65f41b1d125ab76a95df867da2a97a1bd8e30bf7920a50446d6fc3da158d6b0c
-    username: cgcfrmvsoosznm
+    password: 692orlR7mLMO
+    username: root
+#     password: 65f41b1d125ab76a95df867da2a97a1bd8e30bf7920a50446d6fc3da158d6b0c
+#    username: cgcfrmvsoosznm
+    
   jpa:
     show-sql: false
     hibernate:
@@ -16,7 +20,8 @@ spring:
       
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#       dialect: org.hibernate.dialect.PostgreSQLDialect
  
   mvc:
     throw-exception-if-no-handler-found: true

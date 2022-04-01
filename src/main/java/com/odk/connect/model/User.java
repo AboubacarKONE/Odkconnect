@@ -15,8 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -59,9 +57,8 @@ public class User {
 	private String[] authorities;
 	private boolean isActive;
 	private boolean isNonLocked;
-	@JsonIgnore
 	@OneToMany(mappedBy = "user")
-//	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	private List<LignePromotion> lignePromotions;
 
 }

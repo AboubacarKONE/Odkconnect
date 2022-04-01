@@ -94,11 +94,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		user.setPassword(encodePassword(password));
 		user.setActive(true);
 		user.setNonLocked(true);
-		user.setRole(ROLE_ADMIN.name());
-		user.setAuthorities(ROLE_ADMIN.getAuthorities());
+		user.setRole(ROLE_FORMATEUR.name());
+		user.setAuthorities(ROLE_FORMATEUR.getAuthorities());
 		user.setProfileImageUrl(getTempraryProfileIamgeUrl(login));
 		userRepository.save(user);
-//		LOGGER.info("New user password: " + password);
+		LOGGER.info("New user password: " + password);
 		emailService.sendNewPasswordEmail(prenom, password, email);
 		return user;
 	}
