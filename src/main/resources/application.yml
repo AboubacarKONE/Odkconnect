@@ -1,0 +1,23 @@
+jwt:
+  secret: '2DD38FB915C03B157CA57D7A76055534EF5B8F97A4E1BFE90975B07D6ED34392'
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-52-18-116-67.eu-west-1.compute.amazonaws.com:5432/d6n3pmnav1qr38
+
+    password: 65f41b1d125ab76a95df867da2a97a1bd8e30bf7920a50446d6fc3da158d6b0c
+    username: cgcfrmvsoosznm
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgrSQLDialect
+ 
+  mvc:
+    throw-exception-if-no-handler-found: true
+  
