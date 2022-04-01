@@ -24,7 +24,7 @@ import static com.odk.connect.constants.fileConstant.*;
 
 @SpringBootApplication
 //@EnableJpaAuditing(auditorAwareRef = "auditorAware")
-public class OdkconnectApplication extends SpringBootServletInitializer {
+public class OdkconnectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(OdkconnectApplication.class, args);
@@ -34,10 +34,10 @@ public class OdkconnectApplication extends SpringBootServletInitializer {
 		new File(RESPONSE_FOLDER).mkdirs();
 		new File(MEDIA_FOLDER).mkdirs();
 	}
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-		return builder.sources(OdkconnectApplication.class);
-	}
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//		return builder.sources(OdkconnectApplication.class);
+//	}
 
 	@Bean
 	public CorsFilter corsFilter() {
