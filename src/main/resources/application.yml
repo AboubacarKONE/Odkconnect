@@ -10,7 +10,7 @@ spring:
     password: 65f41b1d125ab76a95df867da2a97a1bd8e30bf7920a50446d6fc3da158d6b0c
     username: cgcfrmvsoosznm
   jpa:
-    show-sql: true
+    show-sql: false
     hibernate:
       ddl-auto: update
       
