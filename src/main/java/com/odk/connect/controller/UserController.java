@@ -156,6 +156,11 @@ public class UserController extends ExceptionHandling {
 		User user = userService.findUserByUsername(username);
 		return new ResponseEntity<User>(user, OK);
 	}
+	@GetMapping("/findUser/{email}")
+	public ResponseEntity<User> getUserByEmail(@PathVariable("email") String email) {
+		User user = userService.findUserByEmail(email);
+		return new ResponseEntity<User>(user, OK);
+	}
 
 	@GetMapping("/findUserById/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable("id") Long id) {

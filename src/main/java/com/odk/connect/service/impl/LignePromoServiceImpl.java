@@ -151,7 +151,26 @@ public class LignePromoServiceImpl implements LignePromotionService {
 		return user;
 	}
 	public  LignePromotion ajouterlignepromo(LignePromotion lignePromotion){
-		return lignePromoRepository.save(lignePromotion);
+//		LignePromotion lignePromo = new LignePromotion();
+//		lignePromo.setUser(user.get());
+//		lignePromo.setPromotion(promotion.get());
+		List<LignePromotion> lignePromoAllUser = lignePromoRepository.findAllByUserId(lignePromotion.getUser().getId());
+		if (!lignePromoAllUser.isEmpty()) {
+			lignePromoAllUser.stream().forEach(lig -> {
+//				System.out.println(lig.getPromotion().getId());
+//				System.out.println(lignePromo.getPromotion().getId());
+				if (lig.getPromotion().getId().equals(lignePromotion.getPromotion().getId())) {
+					counter+=1;						
+				}
+			});
+		}
+		if (counter == 0) {
+			lignePromoSaved = lignePromotion;
+		} else {
+			counter = 0;
+//			throw new PromotionException("cette promotion existe deja pour cet utilisateur");
+		}
+		return lignePromoRepository.save(lignePromoSaved);
 	}
 
 	@Override

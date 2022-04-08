@@ -143,6 +143,12 @@ public class MediaServiceImpl implements MediaService {
 
 	}
 
+	@Override
+	public void deleteMedia() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 //    @Override

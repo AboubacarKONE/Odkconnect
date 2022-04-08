@@ -47,6 +47,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static org.springframework.http.MediaType.*;
 
+
 @Service
 @Transactional
 @Qualifier("userDetailsService")
@@ -317,9 +318,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 			LOGGER.warn("Aucun utilisateur n'a ete trouve avec l'ID " + mdp.getId());
 			throw new MotDePasseException(NO_USER_FOUND_BY_ID + mdp.getId());
 		}
-		if(userOptionnal.get().getPassword() != encodePassword(mdp.getAncienmotdepasse())) {
-			throw new MotDePasseException("votre ancien mot de passe n'est pas valide");
-		}
 		User user = userOptionnal.get();
 		user.setPassword(encodePassword(mdp.getMotDePasse()));
 		return userRepository.save(user);
@@ -339,7 +337,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
 	private void validate(ChangerMotDePasseUser mdp) throws MotDePasseException {
 		if (mdp == null) {
-			LOGGER.warn("Impossible de modifier le mot de passe avec un ID NULL");
+			LOGGER.warn("Impossible de modifier le mot de passe avec un ID NULL" );
 			throw new MotDePasseException(NO_INFORMATION_TO_CHANGE_PASSWORD);
 		}
 		if (mdp.getId() == null) {
@@ -348,7 +346,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 		}
 		
 		if (StringUtils.isBlank(mdp.getMotDePasse()) || StringUtils.isBlank(mdp.getConfirmeMotDePasse())) {
-			LOGGER.warn("Impossible de modifier le mot de passe avec un mot de passe NULL");
+			LOGGER.warn("Impossible de modifier le mot de passe avec un mot de passe NULL"+mdp);
 			throw new MotDePasseException(PASSWORD_NUL);
 		}
 		if (!mdp.getMotDePasse().equals(mdp.getConfirmeMotDePasse())) {

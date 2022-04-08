@@ -12,7 +12,7 @@ public class SecurityConstant {
 	public static final String ACCESS_DENIED_MESSAGE = "Vous n'avez pas la permission d'accéder à cette page";
 	public static final String OPTIONS_HTTP_METHOD = "OPTIONS";
 	public static final String[] PUBLIC_URLS = { "/odkConnect/user/login", "/odkConnect/user/registerUser",
-			"/odkConnect/user/registerAlumni", "/odkConnect/user/image/**", "/odkConnect/forum/category/image/**",
+			"/odkConnect/user/registerAlumni", "/odkConnect/log/saveLog", "/odkConnect/user/image/**", "/odkConnect/forum/category/image/**",
 			"/odkConnect/forum/quiz/image/**","/odkConnect/forum/response/image/**","/odkConnect/media/image/**"};
 //	public static final String[] PUBLIC_URLS = { "**" };
 }

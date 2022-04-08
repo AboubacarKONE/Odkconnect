@@ -7,7 +7,6 @@ import lombok.Data;
 @Builder
 public class ChangerMotDePasseUser {
 	private Long id;
-	private String ancienmotdepasse;
 	private String MotDePasse;
 	private String confirmeMotDePasse;
 }

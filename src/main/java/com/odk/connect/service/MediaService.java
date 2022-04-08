@@ -22,4 +22,5 @@ public interface MediaService {
 	 List<Media>getMediaByWeek() throws ForumException;
 	 List<Media>getMediaByMonth() throws ForumException;
 	 List<Media>getMediaBetweenDate(LocalDate dateDebut, LocalDate dateFin);
+	 void deleteMedia();
 }

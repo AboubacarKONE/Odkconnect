@@ -17,7 +17,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface MediaRepository extends JpaRepository<Media, Long> {
 	@Query(value="select u from Media u where u.user.id = :id and  u.fileName = :fileName ")
 	List<Media> findByFileName(@Param("id")Long id,@Param("fileName") String fileName);
-	@Query(value="select u from Media u where u.user.id = :id and  u.user.role = 'ROLE_ALUM' ")
+	@Query(value="select u from Media u where u.user.id = :id and  u.titre = '' ")
 	List<Media>findAllByUserId(@Param("id") Long id);
 	@Query(value="select u from Media u where u.titre <> '' ")
 	List<Media>findAllByAdminAndFormateur();
